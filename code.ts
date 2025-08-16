@@ -196,17 +196,17 @@
 // 3 --> ***
 // 5 --> *****
 
-function printStars(length:number):void{
-    let toPrint:string = '';
-    for(let i=0; i<length;i++){
-        toPrint += '*';
-    }
-    console.log(toPrint);
-}
+//function printStars(length:number):void{
+//    let toPrint:string = '';
+//    for(let i=0; i<length;i++){
+//        toPrint += '*';
+//    }
+//    console.log(toPrint);
+//}
 
-printStars(3);
-printStars(5);
-printStars(1);
+//printStars(3);
+//printStars(5);
+//printStars(1);
 
 // STATUS - OK
 // RETURNED '***', '*****'
