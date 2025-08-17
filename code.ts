@@ -196,17 +196,17 @@
 // 3 --> ***
 // 5 --> *****
 
-//function printStars(length:number):void{
-//    let toPrint:string = '';
-//    for(let i=0; i<length;i++){
-//        toPrint += '*';
-//    }
-//    console.log(toPrint);
-//}
+function printStars(length:number):void{
+    let toPrint:string = '';
+    for(let i=0; i<length;i++){
+        toPrint += '*';
+    }
+    console.log(toPrint);
+}
 
-//printStars(3);
-//printStars(5);
-//printStars(1);
+printStars(3);
+printStars(5);
+printStars(1);
 
 // STATUS - OK
 // RETURNED '***', '*****'
@@ -253,3 +253,81 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // 15)
+
+// write a function that, given an array of both letters and numbers, returns a new array that contains only the letters from the first array.
+
+
+// let inputArray:(number|string)[] = ["A", 1, "b", 2, 3, 4, "C", "D"];
+
+// function returnCharacters(inArray:(number|string)[]):string[]{
+//     let outputArray:string[] = [];
+//     for(let i=0; i<inArray.length;i++){
+//         if(typeof inArray[i] !== 'number'){
+//             outputArray.push(inArray[i] as string);
+//         }
+//     }
+//     return outputArray;
+// }
+
+// console.log(returnCharacters(inputArray));
+
+// STATUS - OK
+// RETURNED ['A', 'b', 'C', 'D']
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 16)
+
+// create a function that takes in two strings and prints out the first letter in each of them.
+
+// examples:
+// "happy", "face" ---> "hf"
+// "abra", "cadabra" ---> "ac"
+
+// function returnFirst(txt01:string, txt02:string):string{
+
+//     return txt01.charAt(0).concat(txt02.charAt(0));
+// }
+
+// console.log(returnFirst("happy", "face"));
+// console.log(returnFirst("abra", "cadabra"));
+
+// STATUS - OK
+// RETURNED "hf", "ac"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 17)
+
+// write a function that determines the ‘nth’ triangle number.
+/**
+ * For example, f(4) = 10 and f(5) = 15
+ * A triangle number is the number of
+ * dots in a given triangle (shown below)
+ *    .
+ *   . .
+ *  . . .
+ * . . . .
+ * imagine bowling pins
+ */
+
+
+function nthTriangle(f:number):number{
+    let count = 0;
+    for(let i=1;i<=f;i++){
+
+        count += i;
+        
+    }
+    return count;
+}
+
+console.log(nthTriangle(4));
+console.log(nthTriangle(5));
+
+// STATUS - OK
+// RETURNED 10, 15
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 18)

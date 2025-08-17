@@ -157,10 +157,63 @@ printStars(1);
 // example:
 // ["abra", "cadabra"] returns "abracadabra"
 // ["a", "b", "c"] returns "abc"
-var inputOne = ["abra", "cadabra"];
-var inputTwo = ["a", "b", "c"];
-function concatArray(input) {
-    return input.join('');
+// let inputOne:string[] = ["abra", "cadabra"];
+// let inputTwo:string[] = ["a", "b", "c"];
+// function concatArray(input:string[]):string{
+//     return input.join('');
+// }
+// console.log(concatArray(inputOne));
+// console.log(concatArray(inputTwo));
+// STATUS - OK
+// RETURNED "abracadabra", "abc"
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 15)
+// write a function that, given an array of both letters and numbers, returns a new array that contains only the letters from the first array.
+// let inputArray:(number|string)[] = ["A", 1, "b", 2, 3, 4, "C", "D"];
+// function returnCharacters(inArray:(number|string)[]):string[]{
+//     let outputArray:string[] = [];
+//     for(let i=0; i<inArray.length;i++){
+//         if(typeof inArray[i] !== 'number'){
+//             outputArray.push(inArray[i] as string);
+//         }
+//     }
+//     return outputArray;
+// }
+// console.log(returnCharacters(inputArray));
+// STATUS - OK
+// RETURNED ['A', 'b', 'C', 'D']
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 16)
+// create a function that takes in two strings and prints out the first letter in each of them.
+// examples:
+// "happy", "face" ---> "hf"
+// "abra", "cadabra" ---> "ac"
+// function returnFirst(txt01:string, txt02:string):string{
+//     return txt01.charAt(0).concat(txt02.charAt(0));
+// }
+// console.log(returnFirst("happy", "face"));
+// console.log(returnFirst("abra", "cadabra"));
+// STATUS - OK
+// RETURNED "hf", "ac"
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 17)
+// write a function that determines the ‘nth’ triangle number.
+/**
+ * For example, f(4) = 10 and f(5) = 15
+ * A triangle number is the number of
+ * dots in a given triangle (shown below)
+ *    .
+ *   . .
+ *  . . .
+ * . . . .
+ * imagine bowling pins
+ */
+function nthTriangle(f) {
+    var count = 0;
+    for (var i = 1; i <= f; i++) {
+        count += i;
+    }
+    return count;
 }
-console.log(concatArray(inputOne));
-console.log(concatArray(inputTwo));
+console.log(nthTriangle(4));
+console.log(nthTriangle(5));
