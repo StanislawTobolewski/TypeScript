@@ -128,16 +128,16 @@
 // example:
 // 3 --> ***
 // 5 --> *****
-function printStars(length) {
-    var toPrint = '';
-    for (var i = 0; i < length; i++) {
-        toPrint += '*';
-    }
-    console.log(toPrint);
-}
-printStars(3);
-printStars(5);
-printStars(1);
+// function printStars(length:number):void{
+//     let toPrint:string = '';
+//     for(let i=0; i<length;i++){
+//         toPrint += '*';
+//     }
+//     console.log(toPrint);
+// }
+// printStars(3);
+// printStars(5);
+// printStars(1);
 // STATUS - OK
 // RETURNED '***', '*****'
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -208,12 +208,203 @@ printStars(1);
  * . . . .
  * imagine bowling pins
  */
-function nthTriangle(f) {
-    var count = 0;
-    for (var i = 1; i <= f; i++) {
-        count += i;
+// function nthTriangle(f:number):number{
+//     let count = 0;
+//     for(let i=1;i<=f;i++){
+//         count += i;
+//     }
+//     return count;
+// }
+// console.log(nthTriangle(4));
+// console.log(nthTriangle(5));
+// STATUS - OK
+// RETURNED 10, 15
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 18)
+// Write a function that checks a Sudoku row for correctness
+// let sudoku:number[][] = [
+//     [1,2,3,4,5,6,7,8,9], 
+//     [2,3,4,5,6,7,8,9,1],
+//     [3,4,5,6,7,8,9,1,2],
+//     [4,5,6,7,8,9,1,2,3],
+//     [5,6,7,8,9,1,2,3,4],
+//     [6,7,8,9,1,2,3,4,5],
+//     [7,8,9,1,2,3,4,5,6],
+//     [8,9,1,2,3,4,5,6,7],
+//     [9,1,2,3,4,5,6,7,8]    
+// ];
+// function checkArr(arr:number[][]):string|void{
+//     for(let x=0;x<arr.length;x++){
+//         let elements = new Set<number>(arr[x]);
+//         if(arr[x].length!=9){
+//                 return 'Row: ' + (x+1) + ' has wrong length. Should have 9 elements.';
+//         }
+//         else if(arr.length!=9){
+//                 return 'The length of sudoku is wrong. Should have 9 rows.';
+//         }
+//         else if(elements.size !== arr[x].length){
+//                 return 'duplicate number in a row: ' + (x+1) + '.';
+//             }
+//     }
+//     return 'ok';
+// }
+//console.log(checkArr(sudoku));
+// STATUS - OK
+// RETURNED... correct answer.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 19)
+// Write a function that takes in two integers and returns the one which is
+// closest to 0. If they are the same distance from 0, return either of them.
+// example:
+// 2, 3 returns 2
+// -5, 6 returns -5
+// -1, -1 returns -1
+// function checkDistance(x:number, y:number):number[]|number{
+//     if(Math.abs(x) === Math.abs(y)){
+//         return [x,y];
+//     }
+//     else if(Math.abs(x) < Math.abs(y)){
+//         return x;
+//     }
+//     else{
+//         return y;
+//     }
+//     return [];
+// }
+// console.log(checkDistance(2,3));
+// console.log(checkDistance(-5,-6));
+// console.log(checkDistance(-1,-1));
+// STATUS - OK
+// RETURNED: 2,-5, -1-1.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 20)
+// create a function that takes in three booleans as parameters. If any two are
+// true and one is false, return true. Otherwise, return false.
+// e.g.
+// true, true, false --> true
+// true, false, false --> false
+// true, false, true --> true
+// false, false, false ---> false
+// function boolChecker(x:boolean, y:boolean, z:boolean):boolean{
+//     if(!x&&!y&&!z){
+//         return false;
+//     }
+//     else if(x&&y&&z){
+//         return true;
+//     }
+//     else{
+//         return true;
+//     }
+//     return true;
+// }
+// console.log(boolChecker(true, true, false));
+// console.log(boolChecker(true, false, true));
+// console.log(boolChecker(false, true, true));
+// console.log(boolChecker(false, false, false));
+// console.log(boolChecker(true, true, true));
+// STATUS - OK
+// RETURNED: true, true, true, false (+ true for all input true); 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 21)
+// Level 1
+// create a function that determines the nth fibonacci number. A fibonacci number is defined as
+// the sum of the previous two fibonacci numbers, i.e. the sequence goes 0, 1, 1, 2, 3, 5, 8, 13, 21 ...
+// examples:
+// fibonacci(1) returns 0
+// fibonacci(5) returns 3
+// fibonacci(8) returns 13
+// function nthFibonaci(input:number):number{
+//     if(input<0){
+//         throw new Error('fdsfdfsd');
+//     }
+//     if(input===0){
+//         return 0;
+//     }
+//     if(input===1){
+//         return 1;
+//     }
+//         let prev = 0;
+//         let current = 1;
+//         for(let i=2;i<input;i++){
+//             let next = prev + current;
+//             prev = current;
+//             current = next;
+//         }
+//         return current;
+// }
+// console.log(nthFibonaci(0));
+// console.log(nthFibonaci(5));
+// console.log(nthFibonaci(8));
+// STATUS - OK
+// RETURNED: 0, 3, 13
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 22)
+// given an array of integers, write a function that finds the average and returns it.
+// examples:
+// [1,2,3] --> 2
+// [1,2,4] --> 2.3333
+// let inArray_01:number[] = [1,2,3];
+// let inArray_02:number[] = [1,2,4];
+// function calcAverage(inputData:number[]):number{
+//     let sum = 0;
+//     for(let i=0;i<inputData.length;i++){
+//         sum = sum + inputData[i];
+//     }
+//     return (sum/inputData.length)
+// }
+// console.log(calcAverage(inArray_01).toFixed(2));
+// console.log(calcAverage(inArray_02).toFixed(2));
+// STATUS - OK
+// RETURNED: 2, 2.33 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 23)
+// You're trying to create a paginator that splits up your items into pages.
+// First, given a total number of items, determine how many pages you need to create
+// if there's supposed to be 50 items on a page.
+// examples:
+// 45 --> 1
+// 100 --> 2
+// 101 --> 3
+// function paginator(items:number, onPage:number):number{
+//     return Math.ceil(items/50);
+// }
+// console.log(paginator(45,50));
+// console.log(paginator(100,50));
+// console.log(paginator(101,50));
+// STATUS - OK
+// RETURNED: 2, 2.33 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 24)
+// write a function that takes in an array of numbers and checks
+// whether each number is less than the previous one.
+// Return true if all of them fit this condition.
+// let inputData01:number[] = [6,5,4,3,2,1];
+// let inputData02:number[] = [6,5,4,8,2,1];
+// function checkIfLess(inData:number[]):boolean{
+//     for(let i=1;i<inData.length;i++){
+//         if(inData[i]>=inData[i-1]){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// console.log(checkIfLess(inputData01));
+// console.log(checkIfLess(inputData02));
+// STATUS - OK
+// RETURNED: true, false
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 25)
+// Determine whether a given string is a palindrome. "radar", "racecar", "kayak" are all palindromes.
+function checkPalindrome(inputString) {
+    for (let i = 0; i < inputString.length; i++) {
+        if (inputString[i] != inputString[inputString.length - i]) {
+            console.log(inputString[i] + ' : ' + inputString[(inputString.length - i) - 1]);
+            console.log(i + ' : ' + (inputString.length - i - 1));
+            return false;
+        }
     }
-    return count;
+    return true;
 }
-console.log(nthTriangle(4));
-console.log(nthTriangle(5));
+console.log(checkPalindrome('radar'));
+console.log(checkPalindrome('racecar'));
+console.log(checkPalindrome('kayak'));
